@@ -48,11 +48,18 @@ header nav {
 }
 header nav ul,
 header nav ul.visible {
-  display: table;
+  /*display: table;*/
+  display: block;
+  margin: 20px;
+  padding: 0;
   width: 100%;
+  text-align: center;
 }
 header nav ul li {
-  display: table-cell;
+  /*display: table-cell;*/
+  display: inline-block;
+  margin-right: 20px;
+  float: right;
 }
 header nav ul li a {
   font-family: 'Montserrat', sans-serif;
@@ -62,8 +69,9 @@ header nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
+  display: block;
 }
-header nav ul > li > a{
+header nav ul > li > a {
     height: 80px;
     line-height: 80px;
 }
@@ -85,6 +93,10 @@ header nav .menu-toggler .bar {
   margin-bottom: 5px;
   background-color: #898989;
   border-radius: 5px;
+}
+header nav .menu-toggler:focus {
+  border: 3px solid #7cc576;
+  padding: 3px;
 }
 .container-fluid {
   width: 100%;
@@ -110,6 +122,7 @@ header nav .menu-toggler .bar {
   color: #fff;
   background-color: #7cc576;
   border: none;
+  cursor: pointer;
 }
 .btn-creative {
   margin-left: 40%;
@@ -253,13 +266,19 @@ header nav .menu-toggler .bar {
   font-size: 16px;
   color: #777;
 }
-.latest .award p {
+.latest .award {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #7cc576;
+  
   margin: 0;
 }
+.latest .award a {
+  text-decoration: none;
+  color: #7cc576;
+  cursor: pointer;
+}
+
 .latest-left {
   margin-top: 86px;
 }
@@ -304,14 +323,14 @@ header nav .menu-toggler .bar {
 .citation-first {
   float: right;
   max-width: 544px;
-  padding-top: 80px;
+  padding-top: 50px;
 }
 .citation-twice {
   float: left;
   max-width: 544px;
-  padding-top: 155px;
+  padding-top: 135px;
 }
-.author p {
+.author {
   margin-top: 20px;
   color: #7cc576;
 }
@@ -401,14 +420,23 @@ header nav .menu-toggler .bar {
   padding: 10px;
   margin-top: 10px;
 }
+.copy-content {
+  width: 560px;
+}
 .copy p {
   color: #555;
   display: inline-block;
   margin: 0;
-  width: 33%;  
+  float: left;  
 }
-.copy img {
-  margin: 28px 5px 0 5px;
+
+.copy ul li {
+  display: inline-block;
+  float: right;
+}
+
+.copy ul li img {
+  margin: -10px 5px 0 5px;
 }
 .tweet-footer,
 .face-footer,
@@ -441,14 +469,20 @@ header nav .menu-toggler .bar {
     margin-top: 25px;
     margin-left: 10px;
   }
-  header nav{
+  header nav {
     width: 100%;
   }
   header nav .menu-toggler{
     display: block;
   }
-  header nav ul{
+  header nav ul {
     display: none;
+  }
+  .btn-creative {
+    margin-left: 35%; 
+  }
+  .btn-ready {
+    margin-left: 40%;
   }
   .latest {
     background-image: none;
@@ -458,7 +492,7 @@ header nav .menu-toggler .bar {
   }
   .professional,
   .culture {
-    height: 1000px;
+    height: 1050px;
   }
   .professional .title-beautiful,
   .professional .title-responsive,
@@ -467,6 +501,9 @@ header nav .menu-toggler .bar {
     width: 70%;
     display: block;
     margin: 0 auto;
+  }
+  .just-small {
+    margin-left: 24%;
   }
   .our-awesome {
     height: 750px;
@@ -507,24 +544,49 @@ header nav .menu-toggler .bar {
   .properties-1,
   .properties-2,
   .properties-3 {
-    /*max-width: 100%*/
     margin: 10% 30%;
-    text-align: center;
     font-size: 14px;
   }
+  .copy-content {
+  width: 100%;
+  }
 }
-
+@media screen and (max-width: 680px){
+    .latest-left .latest-paragrapf {
+    width: 80%;
+    text-align: center;
+  }
+  .latest {
+    height: 1000px;
+  }
+  .latest-item-1 img,
+  .latest-item-2 img,
+  .latest-item-3 img {
+    width: 20%;
+    margin-left:40%;
+  }
+  .article-latest p {
+    width: 100%;
+    text-align: center;
+  }
+}
 @media screen and (max-width: 480px){
   header nav ul.visible {
     display: block;
   }
-  header nav ul li {
+ /* header nav ul li {
     display: block;
     width: 100%;
     text-align: center;
-  }
+  }*/
   .creative .crative-digital h1 {
     font-size: 35px;
+  }
+  .btn-creative {
+    margin-left: 25%;
+  }
+  .btn-ready {
+    margin-left: 30%;
   }
   .professional h2, 
   .just-relax h2,
@@ -534,10 +596,21 @@ header nav .menu-toggler .bar {
   .ready h2 {
     font-size: 30px;
   }
-  .latest {
-    height: 1100px;
-  }
+
   .our-awesome {
     height: 850px;
+  }
+  .properties-2 .top-footer-row-post {
+    margin-top: 10px;
+  }
+  .copy ul {
+    float: left;
+  }
+  .copy .copy-content  {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .copy ul li {
+  margin-top: 20px;
   }
 }
